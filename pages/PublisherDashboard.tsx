@@ -20,7 +20,8 @@ import {
   ChevronLeft,
   Store,
   ExternalLink,
-  ArrowLeft
+  ArrowLeft,
+  Activity
 } from 'lucide-react';
 
 const CategoryIcon = ({ name, className }: { name: string; className?: string }) => {
@@ -291,11 +292,15 @@ const PublisherDashboard: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
               <button 
-                onClick={handleReset}
+                onClick={() => {
+                   // For now, this just stays on the dashboard as a "Live View" 
+                   // or we could show an alert saying "Tracking active..."
+                   alert("Live tracking initialized. Distribution metrics are being calculated.");
+                }}
                 className="flex items-center justify-center space-x-2 px-6 py-5 bg-indigo-600 text-white rounded-2xl font-black hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 transform active:scale-95"
               >
-                <ArrowRight className="h-5 w-5" />
-                <span>Launch New Hub</span>
+                <Activity className="h-5 w-5" />
+                <span>Live Track Coupon</span>
               </button>
               
               <button 
